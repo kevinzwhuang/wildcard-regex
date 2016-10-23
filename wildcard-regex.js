@@ -35,9 +35,9 @@ function transformArrayToPattern(arrayOfWildcardStrings) {
 function wildcardRegex(stringOrArray) {
   var pattern;
   if (stringOrArray.constructor === String) {
-    pattern = transformWildcardToPattern(string)
+    pattern = transformWildcardToPattern(stringOrArray);
   } else if (stringOrArray.constructor === Array) {
-    pattern = transformArrayToPattern(stringOrArray)
+    pattern = transformArrayToPattern(stringOrArray);
   } else {
     throw TypeError('WildcardRegex only accepts a string or array as an argument');
   }
