@@ -38,6 +38,8 @@ function wildcardRegex(stringOrArray) {
     pattern = transformWildcardToPattern(string)
   } else if (stringOrArray.constructor === Array) {
     pattern = transformArrayToPattern(stringOrArray)
+  } else {
+    throw TypeError('WildcardRegex only accepts a string or array as an argument');
   }
   var regex = new RegExp(pattern);
   return regex;
