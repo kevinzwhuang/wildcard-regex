@@ -1,0 +1,24 @@
+{
+  "name": "wildcard-regex",
+  "version": "0.1.0",
+  "description": "Super simple wildcard matching implementation for strings using Regex",
+  "main": "wildcard-regex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinzwhuang/wildcard-regex.git"
+  },
+  "keywords": [
+    "wildcard",
+    "regex",
+    "matching"
+  ],
+  "author": "Kevin Huang <kevin.ziwen.huang@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevinzwhuang/wildcard-regex/issues"
+  },
+  "homepage": "https://github.com/kevinzwhuang/wildcard-regex#readme"
+}
