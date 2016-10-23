@@ -1,6 +1,6 @@
 {
   "name": "wildcard-regex",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Super simple wildcard matching implementation for strings using Regex",
   "main": "wildcard-regex.js",
   "scripts": {
