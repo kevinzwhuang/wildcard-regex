@@ -41,3 +41,23 @@ var regex = wildcardRegex(['Test*This'], ['Or*This']);
 Takes in a string or array of possible wildcard patterns as an argument.
 
 Returns a `RegExp` object.
+
+## Development
+
+`wildcard-regex` is written to be portable for most Node and browser
+environments(even IE) without any need for transpilers. To develop your
+`wildcard-regex`, start by cloning this repo by running:
+
+```
+git clone https://github.com/kevinzwhuang/wildcard-regex.git
+```
+
+Then make sure to run `npm install` to install the `devDependencies` necessary
+for testing. To test `wildcard-regex`, run `npm test`.
+
+## Tests
+
+`wildcard-regex` uses Mocha to test with Node for backend environments. Chai is
+used as the expectations engine.
+
+You can find tests within the `./tests/` folder.
