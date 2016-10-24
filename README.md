@@ -57,7 +57,11 @@ for testing. To test `wildcard-regex`, run `npm test`.
 
 ## Tests
 
-`wildcard-regex` uses Mocha to test with Node for backend environments. Chai is
-used as the expectations engine.
+`wildcard-regex` uses Mocha to test with Node for backend environments and
+Karma with Mocha to test for browser environments. You can run tests for both
+backend and frontend environments by running `npm test`.
+
+To run tests for specific environments, you can run `npm run test:node` or `npm
+run test:browser`.
 
 You can find tests within the `./tests/` folder.

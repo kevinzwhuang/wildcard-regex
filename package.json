@@ -1,10 +1,12 @@
 {
   "name": "wildcard-regex",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Super simple wildcard matching implementation for strings using Regex",
   "main": "wildcard-regex.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./tests/wildcardRegex.js"
+    "test": "echo \"Running backend Node tests\" && npm run test:node && echo \"Running frontend browser tests\" && npm run test:browser",
+    "test:browser": "./node_modules/karma/bin/karma start",
+    "test:node": "./node_modules/mocha/bin/mocha ./tests/wildcardRegex.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,12 @@
   "homepage": "https://github.com/kevinzwhuang/wildcard-regex#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.1.2"
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-mocha": "^1.2.0",
+    "karma-mocha-reporter": "^2.2.0",
+    "karma-webpack": "^1.8.0",
+    "mocha": "^3.1.2",
+    "webpack": "^1.13.2"
   }
 }
