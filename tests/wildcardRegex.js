@@ -42,6 +42,16 @@ describe('wildcardRegex', function() {
       expect(regexMiddle.test(incorrectTestString)).to.equal(false);
     });
 
+    it('correctly tests for an empty string pattern', function() {
+      var wildcardEmptyString = '';
+      var regexEmptyString = wildcardRegex(wildcardEmptyString);
+      var correctTestString = '';
+      var incorrectTestString = 'Wrong!';
+
+      expect(regexEmptyString.test(correctTestString)).to.equal(true);
+      expect(regexEmptyString.test(incorrectTestString)).to.equal(false);
+    });
+
   });
 
   describe('when called with an Array of strings', function() {
