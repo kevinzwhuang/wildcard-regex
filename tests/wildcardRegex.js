@@ -71,6 +71,15 @@ describe('wildcardRegex', function() {
       expect(regex.test('wrong')).to.equal(false);
     });
 
+    it('correctly tests for an empty string pattern', function() {
+      var wildcardEmptyArray = ['', 'test'];
+      var regexEmptyArray = wildcardRegex(wildcardEmptyArray);
+
+      expect(regexEmptyArray.test('')).to.equal(true);
+      expect(regexEmptyArray.test('test')).to.equal(true);
+      expect(regexEmptyArray.test('this will not pass')).to.equal(false);
+    });
+
   });
 
 });
