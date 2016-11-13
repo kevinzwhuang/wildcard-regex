@@ -3,19 +3,16 @@
 function transformWildcardToPattern(wildcardString) {
   var length = wildcardString.length;
   var character;
-  var pattern = '';
-  if(wildcardString === '') {
-    pattern = '^$';
-  } else {
-    for (var index = 0; index < length; index++) {
-      character = wildcardString.charAt(index);
-      if (character === '*') {
-        pattern = pattern + '.*'
-      } else {
-        pattern = pattern + character;
-      }
+  var pattern = '^';
+  for (var index = 0; index < length; index++) {
+    character = wildcardString.charAt(index);
+    if (character === '*') {
+      pattern = pattern + '.*'
+    } else {
+      pattern = pattern + character;
     }
   }
+  pattern = pattern + '$';
   return pattern;
 };
 
