@@ -1,4 +1,5 @@
-# wildcard-regex
+# wildcard-regex [![Build Status](https://travis-ci.org/kevinzwhuang/wildcard-regex.svg?branch=master)](https://travis-ci.org/kevinzwhuang/wildcard-regex)
+
 Super simple wildcard matching implementation for strings using Regex
 
 ## Installation
