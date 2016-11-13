@@ -1,5 +1,8 @@
 sudo: false
 language: node_js
+env:
+  - BROWSER=ChromeCi
+  - BROWSER=Firefox
 node_js:
   - node
 before_install:
