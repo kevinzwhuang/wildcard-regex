@@ -1,4 +1,4 @@
-# wildcard-regex [![Build Status](https://travis-ci.org/kevinzwhuang/wildcard-regex.svg?branch=master)](https://travis-ci.org/kevinzwhuang/wildcard-regex)
+# wildcard-regex [![npm](https://img.shields.io/npm/v/wildcard-regex.svg)](https://www.npmjs.com/package/wildcard-regex) [![Build Status](https://travis-ci.org/kevinzwhuang/wildcard-regex.svg?branch=master)](https://travis-ci.org/kevinzwhuang/wildcard-regex)
 
 Super simple wildcard matching implementation for strings using Regex
 
