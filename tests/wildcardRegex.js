@@ -52,6 +52,18 @@ describe('wildcardRegex', function() {
       expect(regexEmptyString.test(incorrectTestString)).to.equal(false);
     });
 
+    it('does not test for wildcards if no asterisks exist', function() {
+      var wildcardString = 'github.com/kevinzwhuang/wildcard-regex';
+      var regex = wildcardRegex(wildcardString);
+      var correctTestString = 'github.com/kevinzwhuang/wildcard-regex';
+      var incorrectTestString = 'https://github.com/kevinzwhuang/wildcard-regex';
+      var incorrectTestString2 = 'https://github.com/kevinzwhuang/wildcard-regex/blob/master/wildcard-regex.js';
+
+      expect(regex.test(correctTestString)).to.equal(true);
+      expect(regex.test(incorrectTestString)).to.equal(false);
+      expect(regex.test(incorrectTestString2)).to.equal(false);
+    });
+
   });
 
   describe('when called with an Array of strings', function() {
