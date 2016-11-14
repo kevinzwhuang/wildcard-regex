@@ -52,6 +52,18 @@ describe('wildcardRegex', function() {
       expect(regexEmptyString.test(incorrectTestString)).to.equal(false);
     });
 
+    it('tests strictly & does not test for wildcards if no asterisks exist', function() {
+      var wildcardString = 'github.com/kevinzwhuang/wildcard-regex';
+      var regex = wildcardRegex(wildcardString);
+      var correctTestString = 'github.com/kevinzwhuang/wildcard-regex';
+      var incorrectTestString = 'https://github.com/kevinzwhuang/wildcard-regex';
+      var incorrectTestString2 = 'https://github.com/kevinzwhuang/wildcard-regex/blob/master/wildcard-regex.js';
+
+      expect(regex.test(correctTestString)).to.equal(true);
+      expect(regex.test(incorrectTestString)).to.equal(false);
+      expect(regex.test(incorrectTestString2)).to.equal(false);
+    });
+
   });
 
   describe('when called with an Array of strings', function() {
@@ -78,6 +90,16 @@ describe('wildcardRegex', function() {
       expect(regexEmptyArray.test('')).to.equal(true);
       expect(regexEmptyArray.test('test')).to.equal(true);
       expect(regexEmptyArray.test('this will not pass')).to.equal(false);
+    });
+
+    it('tests strictly & does not test for wildcards if no asterisks exist', function() {
+      var wildcardArray = ['github.com', 'wikipedia'];
+      var regex = wildcardRegex(wildcardArray);
+
+      expect(regex.test('github.com')).to.equal(true);
+      expect(regex.test('wikipedia')).to.equal(true);
+      expect(regex.test('www.github.com')).to.equal(false);
+      expect(regex.test('www.wikipedia.com')).to.equal(false);
     });
 
   });
