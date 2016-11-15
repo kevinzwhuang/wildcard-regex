@@ -1,5 +1,4 @@
-// Karma configuration
-// Generated on Sun Oct 23 2016 21:47:16 GMT-0700 (PDT)
+webpackConfig = require('./webpack.config.js');
 
 module.exports = function(config) {
   config.set({
@@ -31,12 +30,7 @@ module.exports = function(config) {
     },
 
     // Webpack config
-    webpack: {
-      output: {
-        path: __dirname + '/build/',
-        filename: "bundle.js"
-      }
-    },
+    webpack: webpackConfig,
 
     // Tell webpack to serve logs or not
     webpackMiddleware: {
