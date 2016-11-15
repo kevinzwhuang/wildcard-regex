@@ -34,8 +34,7 @@ module.exports = function(config) {
     webpack: {
       output: {
         path: __dirname + '/build/',
-        filename: "bundle.js",
-        logLevel: 'NONE'
+        filename: "bundle.js"
       }
     },
 
