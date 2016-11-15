@@ -46,4 +46,4 @@ function wildcardRegex(stringOrArray) {
   return regex;
 };
 
-module.exports = wildcardRegex;
+export default wildcardRegex;
