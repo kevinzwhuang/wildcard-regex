@@ -34,9 +34,9 @@ function arrayToPattern(inputArray) {
 function toPatternString(stringOrArray) {
   var pattern;
   if (stringOrArray.constructor === String) {
-    pattern = transformWildcardToPattern(stringOrArray);
+    pattern = stringToPattern(stringOrArray);
   } else if (stringOrArray.constructor === Array) {
-    pattern = transformArrayToPattern(stringOrArray);
+    pattern = arrayToPattern(stringOrArray);
   } else {
     throw TypeError('WildcardRegex only accepts a string or array as an argument');
   }
