@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './src/wildcard-regex.js',
+  entry: './src/index.js',
   output: {
     path: './dist',
     filename: 'wildcard-regex.js',
