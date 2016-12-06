@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Running backend Node tests\" && npm run test:node && echo \"Running frontend browser tests\" && npm run test:browser",
     "test:browser": "./node_modules/karma/bin/karma start",
-    "test:node": "./node_modules/mocha/bin/mocha ./tests/wildcardRegex.js"
+    "test:node": "./node_modules/mocha/bin/mocha ./tests/index.js"
   },
   "repository": {
     "type": "git",
