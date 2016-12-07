@@ -1,5 +1,4 @@
-// Karma configuration
-// Generated on Sun Oct 23 2016 21:47:16 GMT-0700 (PDT)
+webpackConfig = require('./webpack.config.js');
 
 module.exports = function(config) {
   config.set({
@@ -15,7 +14,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'tests/wildcardRegex.js'
+      'tests/index.js'
     ],
 
 
@@ -27,17 +26,11 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'tests/wildcardRegex.js': ['webpack']
+      'tests/index.js': ['webpack']
     },
 
     // Webpack config
-    webpack: {
-      output: {
-        path: __dirname + '/build/',
-        filename: "bundle.js",
-        logLevel: 'NONE'
-      }
-    },
+    webpack: webpackConfig,
 
     // Tell webpack to serve logs or not
     webpackMiddleware: {

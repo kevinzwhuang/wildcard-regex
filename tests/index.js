@@ -1,0 +1,2 @@
+require('./wildcardPatternSpec');
+require('./wildcardRegExpSpec');

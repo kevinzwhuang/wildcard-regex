@@ -1,11 +1,9 @@
-"use strict";
-
-function transformWildcardToPattern(wildcardString) {
-  var length = wildcardString.length;
+function stringToPattern(inputString) {
+  var length = inputString.length;
   var character;
   var pattern = '^';
   for (var index = 0; index < length; index++) {
-    character = wildcardString.charAt(index);
+    character = inputString.charAt(index);
     if (character === '*') {
       pattern = pattern + '.*'
     } else {
@@ -16,14 +14,14 @@ function transformWildcardToPattern(wildcardString) {
   return pattern;
 };
 
-function transformArrayToPattern(arrayOfWildcardStrings) {
-  var length = arrayOfWildcardStrings.length;
+function arrayToPattern(inputArray) {
+  var length = inputArray.length;
   var wildcardString;
   var nextSubPattern;
   var pattern = '';
   for (var index = 0; index < length; index++) {
-    wildcardString = arrayOfWildcardStrings[index];
-    nextSubPattern = transformWildcardToPattern(wildcardString);
+    wildcardString = inputArray[index];
+    nextSubPattern = stringToPattern(wildcardString);
     if (index === 0) {
       pattern = pattern + nextSubPattern;
     } else {
@@ -33,17 +31,18 @@ function transformArrayToPattern(arrayOfWildcardStrings) {
   return pattern;
 };
 
-function wildcardRegex(stringOrArray) {
+function wildcardPattern(stringOrArray) {
   var pattern;
   if (stringOrArray.constructor === String) {
-    pattern = transformWildcardToPattern(stringOrArray);
+    pattern = stringToPattern(stringOrArray);
   } else if (stringOrArray.constructor === Array) {
-    pattern = transformArrayToPattern(stringOrArray);
+    pattern = arrayToPattern(stringOrArray);
   } else {
     throw TypeError('WildcardRegex only accepts a string or array as an argument');
   }
+  return pattern;
   var regex = new RegExp(pattern);
   return regex;
 };
 
-module.exports = wildcardRegex;
+export default wildcardPattern;

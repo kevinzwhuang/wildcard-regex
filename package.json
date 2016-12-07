@@ -1,12 +1,15 @@
 {
   "name": "wildcard-regex",
-  "version": "0.2.5",
-  "description": "Super simple wildcard matching implementation for strings using Regex",
-  "main": "wildcard-regex.js",
+  "version": "3.0.0",
+  "description": "Super simple wildcard tools for generating string patterns and RegExp objects",
+  "main": "/dist/wildcard-regex.js",
   "scripts": {
+    "build": "npm run webpack:dev && npm run webpack:prod",
     "test": "echo \"Running backend Node tests\" && npm run test:node && echo \"Running frontend browser tests\" && npm run test:browser",
     "test:browser": "./node_modules/karma/bin/karma start",
-    "test:node": "./node_modules/mocha/bin/mocha ./tests/wildcardRegex.js"
+    "test:node": "./node_modules/mocha/bin/mocha --compilers js:babel-register ./tests/index.js",
+    "webpack:dev": "./node_modules/webpack/bin/webpack.js",
+    "webpack:prod": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +27,9 @@
   },
   "homepage": "https://github.com/kevinzwhuang/wildcard-regex#readme",
   "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.18.0",
     "chai": "^3.5.0",
     "karma": "^1.3.0",
     "karma-chrome-launcher": "^2.0.0",
@@ -32,6 +38,6 @@
     "karma-mocha-reporter": "^2.2.0",
     "karma-webpack": "^1.8.0",
     "mocha": "^3.1.2",
-    "webpack": "^1.13.2"
+    "webpack": "^2.1.0-beta.26"
   }
 }

@@ -1,20 +1,20 @@
 var chai = require('chai');
 var expect = chai.expect;
-var wildcardRegex = require('../wildcard-regex.js')
+var wildcardRegExp = require('../src/wildcardRegExp').default
 
-describe('wildcardRegex', function() {
+describe('wildcardRegExp', function() {
 
   describe('when called with a String', function() {
 
     it('returns a RegExp object', function() {
       var wildcardString = 'We have all of your *';
-      var regex = wildcardRegex(wildcardString);
+      var regex = wildcardRegExp(wildcardString);
       expect(regex.constructor).to.equal(RegExp);
     });
 
     it('correctly tests for patterns with a ending wildcard', function() {
       var wildcardEnd = 'The answer is *';
-      var regexEnd = wildcardRegex(wildcardEnd);
+      var regexEnd = wildcardRegExp(wildcardEnd);
       var correctTestString = 'The answer is here!';
       var incorrectTestString = 'Wrong!';
 
@@ -24,7 +24,7 @@ describe('wildcardRegex', function() {
 
     it('correctly tests for patterns with a starting wildcard', function() {
       var wildcardStart = '* error was found';
-      var regexStart = wildcardRegex(wildcardStart);
+      var regexStart = wildcardRegExp(wildcardStart);
       var correctTestString = '404 error was found';
       var incorrectTestString = 'Wrong!';
 
@@ -34,7 +34,7 @@ describe('wildcardRegex', function() {
 
     it('correctly tests for patterns with a middle wildcard', function() {
       var wildcardMiddle = 'The * was not found';
-      var regexMiddle = wildcardRegex(wildcardMiddle);
+      var regexMiddle = wildcardRegExp(wildcardMiddle);
       var correctTestString = 'The resource was not found';
       var incorrectTestString = 'Wrong!';
 
@@ -44,7 +44,7 @@ describe('wildcardRegex', function() {
 
     it('correctly tests for an empty string pattern', function() {
       var wildcardEmptyString = '';
-      var regexEmptyString = wildcardRegex(wildcardEmptyString);
+      var regexEmptyString = wildcardRegExp(wildcardEmptyString);
       var correctTestString = '';
       var incorrectTestString = 'Wrong!';
 
@@ -54,7 +54,7 @@ describe('wildcardRegex', function() {
 
     it('tests strictly & does not test for wildcards if no asterisks exist', function() {
       var wildcardString = 'github.com/kevinzwhuang/wildcard-regex';
-      var regex = wildcardRegex(wildcardString);
+      var regex = wildcardRegExp(wildcardString);
       var correctTestString = 'github.com/kevinzwhuang/wildcard-regex';
       var incorrectTestString = 'https://github.com/kevinzwhuang/wildcard-regex';
       var incorrectTestString2 = 'https://github.com/kevinzwhuang/wildcard-regex/blob/master/wildcard-regex.js';
@@ -70,13 +70,13 @@ describe('wildcardRegex', function() {
 
     it('returns a RegExp object', function() {
       var wildcardArray = ['t*', 'b*b', '*em'];
-      var regex = wildcardRegex(wildcardArray);
+      var regex = wildcardRegExp(wildcardArray);
       expect(regex.constructor).to.equal(RegExp);
     });
 
     it('correctly tests for multiple patterns from an array of wildcard strings', function() {
       var wildcardArray = ['t*', 'b*b', '*em'];
-      var regex = wildcardRegex(wildcardArray);
+      var regex = wildcardRegExp(wildcardArray);
       expect(regex.test('test')).to.equal(true);
       expect(regex.test('bob')).to.equal(true);
       expect(regex.test('team')).to.equal(true);
@@ -85,7 +85,7 @@ describe('wildcardRegex', function() {
 
     it('correctly tests for an empty string pattern', function() {
       var wildcardEmptyArray = ['', 'test'];
-      var regexEmptyArray = wildcardRegex(wildcardEmptyArray);
+      var regexEmptyArray = wildcardRegExp(wildcardEmptyArray);
 
       expect(regexEmptyArray.test('')).to.equal(true);
       expect(regexEmptyArray.test('test')).to.equal(true);
@@ -94,7 +94,7 @@ describe('wildcardRegex', function() {
 
     it('tests strictly & does not test for wildcards if no asterisks exist', function() {
       var wildcardArray = ['github.com', 'wikipedia'];
-      var regex = wildcardRegex(wildcardArray);
+      var regex = wildcardRegExp(wildcardArray);
 
       expect(regex.test('github.com')).to.equal(true);
       expect(regex.test('wikipedia')).to.equal(true);
