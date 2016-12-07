@@ -1,8 +1,8 @@
 {
   "name": "wildcard-regex",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Super simple wildcard tools for generating string patterns and RegExp objects",
-  "main": "/dist/wildcard-regex.js",
+  "main": "dist/wildcard-regex.js",
   "files": [
     "dist",
     "src"
