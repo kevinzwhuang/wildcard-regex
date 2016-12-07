@@ -1,6 +1,6 @@
 var chai = require('chai');
 var expect = chai.expect;
-var toRegExp = require('../dist/wildcard-regex.js').toRegExp;
+var toRegExp = require('../src/toRegExp').default
 
 describe('toRegExp', function() {
 
