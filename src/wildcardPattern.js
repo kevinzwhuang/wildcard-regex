@@ -31,7 +31,7 @@ function arrayToPattern(inputArray) {
   return pattern;
 };
 
-function toPatternString(stringOrArray) {
+function wildcardPattern(stringOrArray) {
   var pattern;
   if (stringOrArray.constructor === String) {
     pattern = stringToPattern(stringOrArray);
@@ -45,4 +45,4 @@ function toPatternString(stringOrArray) {
   return regex;
 };
 
-export default toPatternString;
+export default wildcardPattern;

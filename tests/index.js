@@ -1,2 +1,2 @@
-require('./toPatternStringSpec');
-require('./toRegExpSpec');
+require('./wildcardPatternSpec');
+require('./wildcardRegExpSpec');
