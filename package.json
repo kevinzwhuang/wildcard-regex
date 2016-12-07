@@ -3,6 +3,10 @@
   "version": "3.0.0",
   "description": "Super simple wildcard tools for generating string patterns and RegExp objects",
   "main": "/dist/wildcard-regex.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "npm run webpack:dev && npm run webpack:prod",
     "test": "echo \"Running backend Node tests\" && npm run test:node && echo \"Running frontend browser tests\" && npm run test:browser",
